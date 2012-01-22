@@ -1,0 +1,34 @@
+<h1>Edit book page</h1>
+
+<%= form_for(@book, :html => { :multipart => true}) do |f| %>
+  <%= render 'layouts/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br />
+    <%= f.text_area :info %>
+  </div>
+  
+  <div class="field"> 
+      <%= f.label "Book cover" %><br />
+      <%= f.file_field :book_cover %>
+  </div>
+  
+  <div class="select_author">
+  <%= select_tag "authors", options_from_collection_for_select(@authors, "id", "name"),:size => 10, :multiple => true %>
+ 
+ <button type="button" id = "to_left"><<</button> 
+ <button type="button" id = "to_right">>></button>
+
+  <%= select_tag "selected_authors",options_from_collection_for_select(@book_author, "id", "name"),:size => 10, :multiple => true %>
+ </div>
+
+  <div class="actions">
+    <%= f.submit "Update", :id => "update" %>
+  </div>
+
+
+
+<% end %>

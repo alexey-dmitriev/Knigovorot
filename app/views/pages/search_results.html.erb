@@ -1,0 +1,5 @@
+<h1>Результаты поиска:</h1>
+<p> 
+<% @search_res.collect do |i| %> 
+<%= link_to i.name, author_path(i.id) %> <br /> 
+<% end %> </p>

@@ -1,0 +1,36 @@
+<h1>Edit publication's page</h1>
+
+<%= form_for(@publication, :html => { :multipart => true}) do |f| %>
+  <%= render 'layouts/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :date_of_pub %><br />
+    <%= f.text_field :date_of_pub %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :copies %><br />
+    <%= f.text_field :copies %>
+  </div>
+
+  <div class="field">
+    <%= f.label :format %><br />
+    <%= f.text_field :format %>
+  </div>
+
+  <div class="field">
+    <%= f.label :info %><br />
+    <%= f.text_area :info %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Update", :id => "update" %>
+  </div>
+
+
+
+<% end %>

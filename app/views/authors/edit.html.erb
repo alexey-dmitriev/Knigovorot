@@ -1,0 +1,22 @@
+<h1>Edit Author's page</h1>
+
+<%= form_for(@author, :html => { :multipart => true}) do |f| %>
+ <%= render 'layouts/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br />
+    <%= f.text_area :info %>
+  </div>
+  
+  <div class="field"> 
+      <%= f.label "Author's image" %><br />
+      <%= f.file_field :author_img %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

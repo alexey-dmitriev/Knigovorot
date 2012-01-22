@@ -1,0 +1,29 @@
+<HEADER>
+	<DIV ID=header>
+		<DIV ID=logo>Книговорот</DIV>
+		<DIV ID=not_logo>
+		<DIV ID=main_menu> 
+			<UL>
+		                <LI><%= link_to "News", root_path %></LI>
+				<LI><%= link_to "Рейтинги", contact_path %></LI>
+                                <LI><%= link_to "About", contact_path %></LI>
+				<% if !signed_in? %>
+                                <li><%= link_to "Sign in", signin_path %></li>
+                                <% else %>
+                                <li><%= link_to current_user.name, current_user %></li>
+                                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                                 <li><%= link_to "Sign out", signout_path %></li>
+                                 <% end %>
+				<LI class="last_main_menu"><A HREF="#">Игры</A></LI>
+			</UL>
+		</DIV>
+
+		<DIV ID=search_box> 
+			<DIV ID=search_logo>Всё о любимой книге:</DIV>
+			<DIV ID=search_form><%= render 'layouts/searchline' %></DIV>
+		</DIV>	
+		</DIV>
+	</DIV>
+</HEADER>
+
+

@@ -1,0 +1,64 @@
+<br><br>
+<DIV ID=main_area>
+		<DIV ID=personal_area>
+                        <DIV ID=name_out><DIV ID=name><%= @author.name %></DIV></DIV>
+                        <%= link_to "Edit", edit_author_path(@author) %>
+			<DIV ID=image_of><%= author_img %></DIV>
+                        <DIV ID=tab_pers_out><TABLE ID=tab_pers>
+				<TR>
+					<TD>Дата рождения</TD>
+					<TD>дата</TD>
+				</TR>
+				<TR>
+					<TD>Место рождения</TD>
+					<TD>место</TD>
+				</TR>
+				<TR>
+					<TD>Äàòà ñìåðòè</TD>
+					<TD>Òåêñò èëè äàííûå</TD>
+				</TR>
+				<TR>
+					<TD>Ìåñòî ñìåðòè</TD>
+					<TD>Òåêñò èëè äàííûå</TD>
+				</TR>
+				<TR>
+					<TD>ÔÈÎ</TD>
+					<TD>Òåêñò èëè äàííûå</TD>
+				</TR>
+				<TR>
+					<TD>Êîëè÷åñòâî êíèã</TD>
+					<TD>Òåêñò èëè äàííûå</TD>
+				</TR>
+				<TR>
+					<TD>Ïåðâàÿ ïóáëèêàöèÿ íà ðóññêîì ÿçûêå</TD>
+					<TD>Òåêñò èëè äàííûå</TD>
+				</TR>
+				<TR>
+					<TD>Ïîñëåäíÿÿ ïóáëèêàöèÿ íà ðóññêîì ÿçûêå</TD>
+					<TD>Òåêñò èëè äàííûå</TD>
+				</TR>
+			</TABLE></DIV>
+             
+		</DIV>
+
+		<DIV ID=lefft><DIV ID=leff1></DIV><DIV ID=leff2></DIV></DIV><DIV ID=righht></DIV>
+		<DIV ID=author_menu>
+			<UL>
+				<LI class="first_author_menu"><A HREF="#" class="active">Сводка</A></LI>
+				<LI><A HREF="#">Биография</A></LI>
+				<LI><A HREF="#">Афоризмы</A></LI>
+				<LI><A HREF="#">Фото</A></LI>
+				<LI><A HREF="#">Награды</A></LI>
+			</UL>
+                <p><%= @author.info %></p>
+		</DIV>
+
+Books: <br />
+<% @author_books.collect do |i| %> 
+<%= link_to i.name, book_path(i.id) %> <br /> 
+<% end %>
+
+</DIV>
+
+
+

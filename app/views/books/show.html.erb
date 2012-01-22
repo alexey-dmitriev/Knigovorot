@@ -1,0 +1,22 @@
+<table class="book_info" summary="Book information">
+ <tr>
+  <td class="bmain">
+     <h1>
+       <%= @book.name %>
+     </h1>
+     <%= book_img %>
+  </td>
+  <td class="book_sidebar">
+      <strong>Author:</strong>  
+<% @book_author.collect do |i| %> 
+<%= link_to i.name, author_path(i.id) %> <br /> 
+<% end %>
+      <strong>Info:</strong> <%= @book.info %> <br />
+      <strong>URL</strong>  <%= link_to book_path(@book), @book %>
+   </td>
+ </tr>
+
+<%= link_to "Edit", edit_book_path(@book) %>
+
+
+</table>

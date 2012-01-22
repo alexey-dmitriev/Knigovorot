@@ -1,0 +1,9 @@
+<h1><%= @publisher.name %></h1>
+<p><%= @publisher.info %></p>
+<p><%= link_to "Edit", edit_publisher_path(@publisher) %></p>
+<p>
+Publications:<br />
+<% @publications.collect do |i| %> 
+<%= link_to i.name, publication_path(i.id) %> <br /> 
+<% end %>
+</p>

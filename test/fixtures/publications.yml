@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date_of_pub: 2011-11-24
+  copies: 1
+  format: MyString
+  info: MyText
+  link_to_img: MyString
+  publisher: 
+
+two:
+  name: MyString
+  date_of_pub: 2011-11-24
+  copies: 1
+  format: MyString
+  info: MyText
+  link_to_img: MyString
+  publisher: 

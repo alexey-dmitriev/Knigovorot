@@ -1,0 +1,66 @@
+<script type="text/javascript">
+function getSelectedIndexes (oListbox)
+{
+  var arrIndexes = new Array;
+  for (var i=0; i < oListbox.options.length; i++)
+  {
+      if (oListbox.options[i].selected) arrIndexes.push(i);
+  }
+  return arrIndexes;
+};
+
+
+
+function displayIndexes(oListbox)
+{
+var objSel = document.getElementById(oListbox);
+ 
+alert ( getSelectedIndexes(objSel) ); 
+}
+
+function addOption (oListbox, text, value, isDefaultSelected, isSelected)
+{
+  var oOption = document.createElement("option");
+  oOption.appendChild(document.createTextNode(text));
+  oOption.setAttribute("value", value);
+
+  if (isDefaultSelected) oOption.defaultSelected = true;
+  else if (isSelected) oOption.selected = true;
+
+  oListbox.appendChild(oOption);
+}
+
+function selectAuthors(firstListId,secondListId)
+{
+  var objSel = document.getElementById(firstListId);
+  var objRes = document.getElementById(secondListId);
+  var ind = getSelectedIndexes(objSel);
+
+  for (var i=0; i < ind.length; i++)
+   {
+      addOption(objRes, objSel.options[ind[i]].text, objSel.options[ind[i]].value, false, false);
+   }
+
+  for (var i=ind.length-1; i>=0; i--)
+   {
+      objSel.remove(ind[i]);
+   }
+
+
+}
+
+function getAuthorsId(ListId)
+{ 
+  var objSel = document.getElementById(ListId);
+  var arrValues = new Array;
+
+  for (var i=0; i < objSel.options.length; i++)
+  {
+    arrValues.push(objSel.options[i].value);
+  }
+
+ return arrValues;
+}
+
+<option value = $(this).val()>$(this).text()</option> ;
+</script>
