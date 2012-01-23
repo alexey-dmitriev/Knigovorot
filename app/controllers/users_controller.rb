@@ -16,6 +16,7 @@ before_filter :correct_user, :only => [:edit, :update]
     @user = User.new(params[:user])
     if @user.save
       flash[:success] = "Welcome to Knigovorot"
+      UserMailer.welcome_email(@user).deliver
       redirect_to @user
     else
       @title = "Sign up"

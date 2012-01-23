@@ -6,15 +6,16 @@
 			<UL>
 		                <LI><%= link_to "News", root_path %></LI>
 				<LI><%= link_to "Рейтинги", contact_path %></LI>
+                                <% if !signed_in? %>
                                 <LI><%= link_to "About", contact_path %></LI>
-				<% if !signed_in? %>
                                 <li><%= link_to "Sign in", signin_path %></li>
+                                <LI class="last_main_menu"><A HREF="#">Игры</A></LI>
                                 <% else %>
                                 <li><%= link_to current_user.name, current_user %></li>
                                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                                 <li><%= link_to "Sign out", signout_path %></li>
+                                 <li class="last_main_menu"><%= link_to "Sign out", signout_path %></li>
                                  <% end %>
-				<LI class="last_main_menu"><A HREF="#">Игры</A></LI>
+				
 			</UL>
 		</DIV>
 
