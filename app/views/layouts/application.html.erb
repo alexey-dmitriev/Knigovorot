@@ -3,9 +3,11 @@
 <head>
  <title><%= title %></title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+   <%= render 'layouts/stylesheets' %>   
+   <%= stylesheet_link_tag "application" %>
    <%= javascript_include_tag "application" %>
    <%= csrf_meta_tags %>
-   <%= render 'layouts/stylesheets' %>
+   
 
 </head>
 <body>
